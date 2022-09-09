@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapplication3
+  namespace: ingress-basic
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapplication3
+  template:
+    metadata:
+      labels:
+        app: webapplication3
+    spec:
+      containers:
+      - name: webapplication3
+        image: "acrska.azurecr.io/tanujthakur/webapplication3:#{Build.BuildId}#"
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+# service type loadbalancer    
