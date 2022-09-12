@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: chaithanyahanutestrepo 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chaithanyahanutestrepo
+  template:
+    metadata:
+      labels:
+        app: chaithanyahanutestrepo 
+    spec:
+      containers:
+        - name: chaithanyahanutestrepo 
+          image: sopcontainerregistry.azurecr.io/chaithanyahanutestrepo
+          ports:
+          - containerPort: 80
