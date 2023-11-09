@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: webapplication3
-        image: "demored678.azurecr.io/chaithanyahanu/test-repo:latest"
+        image: "demored678.azurecr.io/chaithanyahanu/test-repo:#{Build.BuildId}#"
         imagePullPolicy: Always
         ports:
         - containerPort: 80
